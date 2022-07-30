@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace YourGarage
+{
+    internal class Vehicle
+    {
+        public string FuelCapacity { get; set; }
+
+        public string Color { get; set; }
+
+        public string Occupancy { get; set; }
+
+        public void Refueling()
+        { }
+    }
+}
