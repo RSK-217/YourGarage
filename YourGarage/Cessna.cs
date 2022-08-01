@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class Cessna : Aircraft
+    internal class Cessna : IVehicle
     {
-        public Cessna (string engineType,string type, string wingspan, string fuelcapacity, string color, string occupancy)
+      
+        public string Type { get; set; }
+        public string FuelOrBatteryCapacity { get; set; }
+        public string Color { get; set; }
+        public string Occupancy { get; set; }
+        public string Wingspan { get; set; }
+        public string Crew { get; set; }
+
+        public Cessna() { }
+
+        public void Operating()
         {
-            EngineType = engineType;
-            Type = type;
-            Wingspan = wingspan;
-            FuelCapacity = fuelcapacity;
-            Color = color;  
-            Occupancy = occupancy;
+            Console.WriteLine($"This is a {Color} {Type} with a Wingspan of {Wingspan}, a crew of {Crew} and a passenger occupancy of {Occupancy}. ");
         }
-
-        public string EngineType { get; set; }
-
-        public void StartingEngines()
-        { }
     }
 }

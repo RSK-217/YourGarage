@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class Truck : Car
+    internal class Truck : IVehicle
     {
-        public Truck(string bedSize, string type, string fuelcapacity, string color, string occupancy)
+        public string Type { get; set; }
+        public string FuelOrBatteryCapacity { get; set; }
+
+        public string Color { get; set; }
+
+        public string Occupancy { get; set; }
+        public string Bedsize { get; set; }
+
+        public Truck() { }
+
+        public void Operating()
         {
-            BedSize = bedSize;
-            Type = type;
-            FuelCapacity = fuelcapacity;
-            Color = color;
-            Occupancy = occupancy;
-            
+            Console.WriteLine($"This is a {Color} {Type} with a fuel capacity of {FuelOrBatteryCapacity}, a bedsize of {Bedsize} and a passenger occupancy of {Occupancy}. ");
         }
-
-        public string BedSize { get; set; }
-
-        public void Hauling()
-        { }
-
     }
 }

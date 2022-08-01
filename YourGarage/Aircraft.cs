@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class Aircraft : Vehicle
-    {
-        public string Type { get; set; }
-        public string Wingspan { get; set; }
+    //internal class Aircraft : IVehicle
+    //{
+    //    public string Wingspan { get; set; }
 
-        public void Flying()
-        {
-            Console.WriteLine($"The {Type} aircraft is in the air with {Occupancy} people aboard.");
-        }
+    //    public string Type { get; set; }
 
-        public void Landing()
-        { }
+    //    public string FuelCapacity { get; set; }
 
-    }
+    //    public string Color { get; set; }
+
+    //    public string Occupancy { get; set; }
+
+
+    //    public void Flying()
+    //    {
+    //        Console.WriteLine($"The {Type} aircraft is in the air with {Occupancy} people aboard.");
+    //    }
+
+    //    public void Landing()
+    //    { }
+
+    //}
 }

@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class Car : Vehicle
-    {
+    //internal class Car : IVehicle
+    //{
 
-        public string Type { get; set; }
+    //    public string Type { get; set; }
 
-        public void Driving()
-        {
-            Console.WriteLine($"We are driving a {Color} {Type} with {Occupancy} passengers. ");
-        }
+    //    public string FuelCapacity { get; set; }
 
-        public void Braking()
-        { }
+    //    public string Color { get; set; }
+
+    //    public string Occupancy { get; set; }
+
+    //    public void Driving()
+    //    {
+    //        Console.WriteLine($"We are driving a {Color} {Type} with {Occupancy} passengers. ");
+    //    }
+
+    //    public void Braking()
+    //    { }
       
 
 
 
-    }
+    //}
 }

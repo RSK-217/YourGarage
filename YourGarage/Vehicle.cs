@@ -8,13 +8,14 @@ namespace YourGarage
 {
     internal class Vehicle
     {
-        public string FuelCapacity { get; set; }
+        public string Type { get; set; }
+        public string FuelAndBatteryCapacity { get; set; }
 
         public string Color { get; set; }
 
         public string Occupancy { get; set; }
 
-        public void Refueling()
+        public void Operating()
         { }
     }
 }

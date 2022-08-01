@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class ElectricCar : IVehicle
+    internal interface IVehicle
     {
+
         public string Type { get; set; }
         public string FuelOrBatteryCapacity { get; set; }
 
         public string Color { get; set; }
 
         public string Occupancy { get; set; }
-        public ElectricCar() { }
 
         public void Operating()
-        {
-            Console.WriteLine($"This is a {Color} {Type} with a fuel capacity of {FuelOrBatteryCapacity} and a passenger occupancy of {Occupancy}. ");
-        }
+        { }
+
+
     }
 }

@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class SailBoat : Watercraft
+    internal class SailBoat : IVehicle
     {
-        public SailBoat(string mastsize, string type, string color, string occupancy)
-        {
-            Mastsize = mastsize;
-            Type = type;
-            Color = color;
-            Occupancy = occupancy;
-        }
+        public SailBoat(){ }
+        
 
+        public string Type { get; set; }
+        public string FuelOrBatteryCapacity { get; set; }
+
+        public string Color { get; set; }
+
+        public string Occupancy { get; set; }
         public string Mastsize { get; set; }
 
-        public void Sailing()
-        { }
+        public void Operating()
+        {
+            Console.WriteLine($"This is a {Color} {Type} with a mast size of {Mastsize} feet and a passenger occupancy of {Occupancy}. ");
+        }
     }
 }

@@ -1,50 +1,82 @@
 ﻿using YourGarage;
 
-// Build a collection of all vehicles that fly
-Cessna smallPlane = new Cessna("single", "cessna", "25 feet", "40 gallons", "white", "4");
-_747 largePlane = new _747("15", "747", "224 feet", "40,000", "blue", "20");
+//// Build a collection of all vehicles that fly
+Cessna smallPlane = new Cessna();
+smallPlane.Type = "Cessna";
+smallPlane.Wingspan = "25 feet";
+smallPlane.Crew = "1";
+smallPlane.Occupancy = "4";
+smallPlane.Color = "Red";
 
-List<Aircraft> aircraftList = new List<Aircraft>();
+_747 largePlane = new _747();
+largePlane.Wingspan = "225 feet";
+largePlane.Type = "747";
+largePlane.Crew = "20";
+largePlane.Occupancy = "300";
+largePlane.Color = "Blue";
+largePlane.FuelOrBatteryCapacity = "40,000 gallons";
+
+List<IVehicle> aircraftList = new List<IVehicle>();
 
 aircraftList.Add(smallPlane);
 aircraftList.Add(largePlane);
 
-// With a single `foreach`, have each vehicle Fly()
-foreach (Aircraft aircraft in aircraftList)
+//// With a single `foreach`, have each vehicle Fly()
+foreach (IVehicle aircraft in aircraftList)
 {
-    aircraft.Flying();
+    aircraft.Operating();
 }
 
 Console.WriteLine();
-// Build a collection of all vehicles that operate on roads
-ElectricCar elecCar = new ElectricCar("500 volts", "Nissan Leaf", "Green", "4");
-Truck truck = new Truck("5x10", "Ford Ranger", "17 gallons", "Red", "3");
+//// Build a collection of all vehicles that operate on roads
+ElectricCar nissanLeaf = new ElectricCar();
+nissanLeaf.Type = "Nissan Leaf";
+nissanLeaf.FuelOrBatteryCapacity = "500 Volts";
+nissanLeaf.Occupancy = "5";
+nissanLeaf.Color = "Silver";
 
-List<Car> roadVehicle = new List<Car>();
+Truck fordRanger = new Truck();
+fordRanger.Type = "Ford Ranger";
+fordRanger.FuelOrBatteryCapacity = "17 gallons";
+fordRanger.Occupancy = "3";
+fordRanger.Color = "Green";
+fordRanger.Bedsize = "5 x 10";
+     
+List<IVehicle> roadVehicle = new List<IVehicle>();
 
-roadVehicle.Add(elecCar);
-roadVehicle.Add(truck);
+roadVehicle.Add(nissanLeaf);
+roadVehicle.Add(fordRanger);
 
-// With a single `foreach`, have each road vehicle Drive()
-foreach (Car car in roadVehicle)
+//// With a single `foreach`, have each road vehicle Drive()
+foreach (IVehicle vehicle in roadVehicle)
 {
-    car.Driving();
+    vehicle.Operating();
 }
 
 Console.WriteLine();
 // Build a collection of all vehicles that operate on water
-SailBoat sailboat = new SailBoat("40 feet", "sail boat", "white", "25");
-MotorBoat motorboat = new MotorBoat("50 cc", "motor boat", "5 gallons", "yellow", "4");
+SailBoat sailboat = new SailBoat();
+    sailboat.Mastsize = "40";
+    sailboat.Occupancy = "25";
+    sailboat.Color = "White";
+    sailboat.Type = "sail boat";
 
-List<Watercraft> boats = new List<Watercraft>();
+MotorBoat motorboat = new MotorBoat();
+motorboat.Type = "motor boat";
+motorboat.Engine = "50 cc";
+motorboat.FuelOrBatteryCapacity = "10 gallons";
+motorboat.Occupancy = "6";
+motorboat.Color = "yellow";
+
+List<IVehicle> boats = new List<IVehicle>();
 
 boats.Add(sailboat);
 boats.Add(motorboat);
 
 // With a single `foreach`, have each water vehicle Drive()
-foreach (Watercraft boat in boats)
+foreach (IVehicle boat in boats)
 {
-    boat.Driving();
+    boat.Operating();
 }
 
 Console.ReadLine();

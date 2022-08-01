@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace YourGarage
 {
-    internal class _747 : Aircraft
+    internal class _747 : IVehicle
     {
-        public _747(string crew, string type, string wingspan, string fuelcapacity, string color, string occupancy)
-        {
-            Crew = crew;
-            Type = type;
-            Wingspan = wingspan;
-            FuelCapacity = fuelcapacity;
-            Color = color;
-            Occupancy = occupancy;
-        }
+        public string Type { get; set; }
+        public string FuelOrBatteryCapacity { get; set; }
+        public string Color { get; set; }
+        public string Occupancy { get; set; }
 
+        public string Wingspan { get; set; }
         public string Crew { get; set; }
+        
+        public _747() { }
+        
+        public void Operating() 
+        {
+            Console.WriteLine($"This is a {Color} {Type} with a Wingspan of {Wingspan}, fuel capacity of {FuelOrBatteryCapacity}, a crew of {Crew} and a passenger occupancy of {Occupancy}. ");
+        }
+        
+       
 
-        public void Boarding()
-        { }
+
     }
 }
